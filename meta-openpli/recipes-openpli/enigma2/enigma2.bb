@@ -24,7 +24,6 @@ RDEPENDS_${PN} = " \
 	glibc-gconv-iso8859-15 \
         hotplug-e2-helper \
 	${PYTHON_RDEPS} \
-	libdvdcss \
 	libdreamdvd \
 	"
 
@@ -36,6 +35,7 @@ RRECOMMENDS_${PN} = " \
 	${GST_GOOD_RDEPS} \
 	${GST_BAD_RDEPS} \
 	${GST_UGLY_RDEPS} \
+	libdvdcss \
 	"
 
 PYTHON_RDEPS = " \
@@ -274,8 +274,12 @@ FILES_${PN}-src = "\
 	/usr/lib/enigma2/python/*/*/*/*/*.py \
 	/usr/lib/enigma2/python/*/*/*/*/*/*.py \
 	"
+	
+do_preinstall() {
+	install -d ${D}${sysconfdir}/enigma2
+}
 
-do_openpli_preinstall_azboxme() {
+do_preinstall_azboxme() {
 	install -d ${D}${sysconfdir}/enigma2	
  	install -m 0644 ${WORKDIR}/rc.png ${S}/data/skin_default/
 	install -m 0644 ${WORKDIR}/rcold.png ${S}/data/skin_default/
@@ -285,7 +289,7 @@ do_openpli_preinstall_azboxme() {
 	install -m 0644 ${WORKDIR}/input_rcold-configured.png  ${S}/data/skin_default/icons
 }
 
-do_openpli_preinstall_azboxminime() {
+do_preinstall_azboxminime() {
 	install -d ${D}${sysconfdir}/enigma2	
  	install -m 0644 ${WORKDIR}/rc.png ${S}/data/skin_default/
 	install -m 0644 ${WORKDIR}/rcold.png ${S}/data/skin_default/
@@ -295,7 +299,7 @@ do_openpli_preinstall_azboxminime() {
 	install -m 0644 ${WORKDIR}/input_rcold-configured.png  ${S}/data/skin_default/icons
 }
 
-do_openpli_preinstall_azboxhd() {
+do_preinstall_azboxhd() {
 	install -d ${D}${sysconfdir}/enigma2	
  	install -m 0644 ${WORKDIR}/rc.png ${S}/data/skin_default/
 	install -m 0644 ${WORKDIR}/rcold.png ${S}/data/skin_default/
@@ -305,7 +309,7 @@ do_openpli_preinstall_azboxhd() {
 	install -m 0644 ${WORKDIR}/input_rcold-configured.png  ${S}/data/skin_default/icons
 }
 
-addtask openpli_preinstall after do_compile before do_install
+addtask preinstall after do_compile before do_install
 
 do_install_append_azboxme() {
 	install -d ${D}/usr/share/enigma2/rc_models/azme
