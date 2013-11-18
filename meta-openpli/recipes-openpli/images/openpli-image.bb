@@ -43,9 +43,11 @@ OPTIONAL_PACKAGES += " \
 	ctorrent \
 	cups \
 	djmount \
+	dvbsnoop \
 	dvdfs \
 	evtest \
 	gdb \
+	hddtemp \
 	hdparm \
 	inadyn-mt \
 	iperf \
@@ -56,9 +58,11 @@ OPTIONAL_PACKAGES += " \
 	mtd-utils \
 	nano \
 	ntfs-3g \
+	ntp \
 	openresolv \
 	openssh \
 	openvpn \
+	parted \
 	procps \
 	pyload \
 	rsync \
@@ -75,10 +79,6 @@ OPTIONAL_PACKAGES += " \
 	wakelan \
 	xfsprogs \
 	zeroconf \
-	volatile-media \
-	enigma2-plugin-skins-magic \
-	fuse-exfat \
-	hotplug-e2-helper \
 	"
 
 export IMAGE_BASENAME = "openazbox"

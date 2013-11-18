@@ -46,7 +46,6 @@ ENIGMA2_PLUGINS = " \
 	enigma2-plugin-systemplugins-hotplug \
 	${@base_contains("MACHINE_FEATURES", "dvb-c", "enigma2-plugin-systemplugins-cablescan", "", d)} \
 	${@base_contains("MACHINE_FEATURES", "frontprocessor", "enigma2-plugin-systemplugins-frontprocessorupgrade", "", d)} \
-	${@base_contains("MACHINE_FEATURES", "ci", "enigma2-plugin-systemplugins-commoninterfaceassignment", "", d)} \
 	${@base_contains("MACHINE_FEATURES", "fan", "enigma2-plugin-extensions-fancontrol2", "", d)} \
 	${@base_contains("MACHINE_FEATURES", "blindscan-dvbs", "enigma2-plugin-systemplugins-satscan", "", d)} \
 	"
