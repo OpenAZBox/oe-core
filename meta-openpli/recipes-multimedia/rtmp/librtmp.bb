@@ -7,11 +7,12 @@ DEPENDS = "openssl zlib"
 
 inherit gitpkgv
 
+SRCREV = "${AUTOREV}"
 PKGV = "2.4+git${GITPKGV}"
 PV = "2.4+git${SRCPV}"
-PR = "r1"
+PR = "r4"
 
-SRC_URI = "git://git.ffmpeg.org/rtmpdump;protocol=git"
+SRC_URI = "git://github.com/oe-alliance/rtmpdump.git;protocol=git"
 
 S = "${WORKDIR}/git/librtmp"
 

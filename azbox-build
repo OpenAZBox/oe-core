@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+# Script By Persian Prince
+# http://e2pe.com
+
+GIT_BRANCH = master
+GIT = git
+PWD := $(shell pwd)
+OE_BASE = $(PWD)
+
+open-azbox:
+	$(GIT) pull origin $(GIT_BRANCH) && $(GIT) submodule update
+	cd build-azboxme; . ./env.source; bitbake openpli-enigma2-image
+	cd build-azboxminime; . ./env.source; bitbake openpli-enigma2-image
+	cd build-azboxhd; . ./env.source; bitbake openpli-enigma2-image

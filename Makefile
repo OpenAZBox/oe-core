@@ -1,10 +1,11 @@
 #!/usr/bin/make -f
-
-# MACHINE examples: et4x00 et5x00 et6x00 et9x00 dm500hd dm800se dm7020hd dm8000 xp1000
+# Open AZBox
+# MACHINE examples
+# AZBox : azboxme, azboxminime, azboxhd
 MACHINE ?= ${subst /,,${subst build-,,${firstword ${dir ${wildcard build-*/}}}}}
 
 ifeq "$(MACHINE)" ""
-	MACHINE=et9x00
+	MACHINE=azboxme
 endif
 
 # Adjust according to the number CPU cores to use for parallel build.
@@ -51,7 +52,7 @@ hash = $(shell echo $(1) | $(XSUM) | awk '{print $$1}')
 .DEFAULT_GOAL := all
 all: init
 	@echo
-	@echo "Openembedded for the OpenPLi 3.0 environment has been initialized"
+	@echo "Openembedded for the Open AZBox environment has been initialized"
 	@echo "properly. Now you can start building your image, by doing either:"
 	@echo
 	@echo " MACHINE=$(MACHINE) make image"
@@ -88,7 +89,7 @@ update:
 	else \
 		$(GIT) submodule sync && \
 		$(GIT) submodule update --init && \
-		echo "The openpli OE is now up-to-date."; \
+		echo "The openazbox OE is now up-to-date."; \
 	fi
 
 .PHONY: all image init initialize update usage
@@ -151,7 +152,7 @@ $(CURDIR)/site.conf:
 	@echo 'PARALLEL_MAKE = "$(PARALLEL_MAKE)"' >> $@
 	@echo 'BUILD_OPTIMIZATION = "-march=native -O2 -pipe"' >> $@
 	@echo 'DL_DIR = "$(DL_DIR)"' >> $@
-	@echo 'INHERIT += "rm_work"' >> $@
+	@echo 'INHERIT += "rm_deepwork"' >> $@
 
 BBLAYERS_CONF_HASH := $(call hash, \
 	'BBLAYERS_CONF_VERSION = "0"' \
