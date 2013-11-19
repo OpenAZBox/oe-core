@@ -66,14 +66,13 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-security-firewall \
 	enigma2-plugin-skins-pli-hd \
 	enigma2-plugin-skins-pli-scale-hd \
+	enigma2-skins \
 	picons-enigma2-meta \
 	softcams-enigma2-meta \
 	task-openplugins \
 	dvb-usb-drivers-meta \
 	cdfs cdtextinfo \
 	meta-enigma2-dvdburn \
-	enigma2-plugin-skins-mymetrixhd \
-	enigma2-skins \
 	"
 
 IMAGE_INSTALL += " \
