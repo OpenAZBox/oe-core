@@ -9,7 +9,7 @@ inherit gitpkgv
 
 PV = "0.10.0+git${SRCPV}"
 PKGV = "0.10.0+git${GITPKGV}"
-PR = "r1"
+PR = "${AZREVISION}"
 
 SRC_URI = "git://git.code.sf.net/p/openpli/gstsubsink;protocol=git"
 

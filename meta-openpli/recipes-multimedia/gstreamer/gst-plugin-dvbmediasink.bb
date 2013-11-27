@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=7fbc338309ac38fefcd64b04bb903e34"
 
 DEPENDS = "gstreamer gst-plugins-base libdca"
 
-SRC_URI = "git://git.code.sf.net/p/openpli/${PN};protocol=git"
+SRC_URI = "git://github.com/OpenAZBox/azbox-dvbmediasink.git;protocol=git"
 
 S = "${WORKDIR}/git"
 
@@ -14,7 +14,7 @@ inherit gitpkgv
 
 PV = "0.10.0+git${SRCPV}"
 PKGV = "0.10.0+git${GITPKGV}"
-PR = "r4"
+PR = "${AZREVISION}"
 
 inherit autotools pkgconfig
 

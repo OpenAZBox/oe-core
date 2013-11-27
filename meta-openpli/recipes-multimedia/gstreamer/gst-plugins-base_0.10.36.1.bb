@@ -10,7 +10,7 @@ DEPENDS += "${@base_contains('DISTRO_FEATURES', 'x11', 'virtual/libx11 libxv', '
 DEPENDS += "alsa-lib freetype liboil libogg libvorbis libtheora avahi util-linux tremor cdparanoia orc orc-native"
 DEPENDS += "gstreamer"
 
-PR = "r2"
+PR = "${AZREVISION}"
 GIT_PV = ""
 
 SRCREV = "bdb33163478fdf95938fbdca7eabad3ea920a277"

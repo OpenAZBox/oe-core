@@ -1,4 +1,4 @@
-DESCRIPTION = "OpenPLi bootlogo"
+DESCRIPTION = "OpenAZBox bootlogo"
 SECTION = "base"
 PRIORITY = "required"
 MAINTAINER = "RTi Team <rticore@gmail.com>"
